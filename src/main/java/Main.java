@@ -6,13 +6,15 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Database database = new Database();
+		System.out.println("Daftar User");
 		LinkedList<User> users = database.getData();
 
+		for (User user : users) {
+			System.out.println(user);
+		}
+
 		while(true) {
-			for (User user : users) {
-				System.out.println(user);
-			}
-			System.out.println("Insert data");
+			System.out.println("\nInsert data");
 			System.out.print("Id: ");
 			String id = scanner.nextLine();
 			System.out.print("Name: ");
@@ -30,6 +32,7 @@ public class Main {
 			}
 		}
 
+		System.out.println("\nDaftar User setelah insert");
 		users = database.getData();
 		for (User user : users) {
 			System.out.println(user);
